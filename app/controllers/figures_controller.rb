@@ -49,7 +49,7 @@ class FiguresController < ApplicationController
  get 'figures/:id/edit' do
    puts @figure.id
    puts params
-   @figure = Figure.find_by(:id => params["id"])
+   @figure = Figure.find(params[:id])
    @landmarks = Landmark.all
    @titles = Title.all
    erb :"/figures/edit"
@@ -96,7 +96,6 @@ class FiguresController < ApplicationController
 
  get '/figures/:id' do
    @figure = Figure.find(params[:id])
-
     erb :"/figures/show"
  end
 end
