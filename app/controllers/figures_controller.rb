@@ -94,6 +94,7 @@ class FiguresController < ApplicationController
 
  get '/figures/:id' do
    @figure = Figure.find(params[:id])
+   puts @figure
     erb :"/figures/show"
  end
 end
