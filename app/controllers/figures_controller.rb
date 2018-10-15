@@ -47,7 +47,6 @@ class FiguresController < ApplicationController
  end
 
  get 'figures/:id/edit' do
-   puts @figure.id
    puts params
    @figure = Figure.find(params[:id])
    @landmarks = Landmark.all
